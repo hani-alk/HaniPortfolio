@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk '{print $NF}')",
+      "Bash(powershell -Command \"Get-ChildItem 'd:\\\\Data\\\\Other Projects\\\\Misc Projects\\\\HaniPortfolio\\\\images\\\\' | Select-Object -ExpandProperty Name | Sort-Object\")"
+    ]
+  }
+}
