@@ -87,7 +87,7 @@ img.desk-visual {
   color: var(--accent-deep);
   line-height: 1;
   direction: rtl;
-  font-weight: 400;
+  font-weight: 500;
 }
 .masthead-bottom {
   display: flex;
@@ -534,6 +534,7 @@ footer a:hover { color: var(--accent); }
     align-items: center;
     gap: 4px;
   }
+  .masthead-bottom { justify-content: center; }
   .intro, .music-layout, .desk-grid { grid-template-columns: 1fr; gap: 24px; }
   .featured { grid-template-columns: 1fr; }
   .library { grid-template-columns: 1fr 1fr; gap: 12px; }
