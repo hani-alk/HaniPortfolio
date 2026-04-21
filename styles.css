@@ -66,16 +66,16 @@ img.desk-visual {
 }
 .nameplate-wrap {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 28px;
+  gap: 32px;
   margin: 4px 0 10px;
 }
 .nameplate {
   font-family: 'Fraunces', Georgia, serif;
   font-variation-settings: "opsz" 144, "SOFT" 100;
   font-weight: 900;
-  font-size: clamp(32px, 6.5vw, 96px);
+  font-size: clamp(30px, 7vw, 96px);
   line-height: 0.88;
   letter-spacing: -0.04em;
   color: var(--ink);
@@ -83,7 +83,7 @@ img.desk-visual {
 .nameplate em { font-style: italic; font-weight: 400; color: var(--accent-deep); }
 .nameplate-ar {
   font-family: 'Amiri', serif;
-  font-size: clamp(32px, 6.5vw, 96px);
+  font-size: clamp(30px, 7vw, 96px);
   color: var(--accent-deep);
   line-height: 1;
   direction: rtl;
@@ -134,6 +134,7 @@ section.band {
   padding: 72px 48px;
   border-bottom: 1px solid var(--ink-faded);
 }
+.intro + .band { padding-top: 36px; }
 .band-header {
   display: flex;
   align-items: baseline;
@@ -230,7 +231,7 @@ section.band {
 /* ============ GAME LIBRARY GRID ============ */
 .library {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 .lib-item {
@@ -354,23 +355,6 @@ section.band {
 }
 .music-img-wide { grid-column: span 2; aspect-ratio: 2/1; }
 
-.music-credits {
-  margin-top: 32px;
-  padding-top: 28px;
-  border-top: 1px solid var(--ink-faded);
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
-}
-.credit-role {
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--accent);
-  margin-bottom: 4px;
-}
-.credit-what { font-size: 14px; font-weight: 700; line-height: 1.25; margin-bottom: 2px; }
-.credit-where { font-size: 12px; color: var(--ink-faded); font-style: italic; }
 
 /* ============ OFF THE DESK ============ */
 .desk-grid {
@@ -385,7 +369,7 @@ section.band {
   overflow: hidden;
 }
 .desk-visual {
-  aspect-ratio: 16/10;
+  aspect-ratio: 1/1;
   border-bottom: 1px solid var(--ink);
   background: var(--paper);
 }
@@ -453,12 +437,20 @@ section.band {
 .wall .band-note { color: rgba(244,234,213,0.6); }
 .wall-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 .trophy {
   border-top: 3px solid var(--ochre);
   padding-top: 16px;
+}
+.trophy img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 14px;
+  border: 1px solid rgba(244,234,213,0.15);
 }
 .trophy .place {
   font-family: 'Fraunces', Georgia, serif;
@@ -541,7 +533,6 @@ footer a:hover { color: var(--accent); }
   .featured { grid-template-columns: 1fr; }
   .library { grid-template-columns: 1fr 1fr; gap: 12px; }
   .wall-grid { grid-template-columns: 1fr 1fr; }
-  .music-credits { grid-template-columns: 1fr 1fr; }
   footer { grid-template-columns: 1fr; gap: 28px; }
   .band-note { text-align: left; max-width: none; }
 }
