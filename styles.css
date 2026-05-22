@@ -91,7 +91,7 @@ img.desk-visual {
 }
 .masthead-bottom {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   border-top: 1px solid var(--ink);
   padding-top: 10px;
@@ -186,12 +186,17 @@ section.band {
   background: var(--paper-deep);
   border: 1px solid var(--ink);
   padding: 18px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
 }
 .feat:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 6px 6px 0 var(--accent-deep);
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  transform: translate(-2px, -2px);
 }
+.feat:hover .feat-tag { color: var(--ochre); }
+.feat:hover .feat-platform { color: rgba(244,234,213,0.65); }
+.feat:hover .blurb { color: rgba(244,234,213,0.85); }
 .feat-visual {
   aspect-ratio: 4/3;
   border: 1px solid var(--ink);
