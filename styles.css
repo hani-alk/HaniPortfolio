@@ -60,16 +60,17 @@ img { display: block; max-width: 100%; }
   min-height: calc(100svh - 118px); /* leave the footer just off the fold */
   max-width: var(--wrap);
   margin: 0 auto;
-  padding: 6vh var(--pad) 4vh;
+  padding: 5vh var(--pad) 3vh;
   display: grid;
-  grid-template-columns: 1fr 0.85fr;
-  gap: 64px;
+  /* the frame sizes itself from viewport height; the text column takes what's left */
+  grid-template-columns: 1fr auto;
+  gap: 56px;
   align-items: center;
 }
 
 /* Both names sit on one baseline, same size and colour, as a single left-aligned unit */
 .signature {
-  margin-bottom: 12vh;
+  margin-bottom: clamp(20px, 7vh, 76px);
   display: flex;
   align-items: baseline;
   gap: 14px;
@@ -138,7 +139,7 @@ img { display: block; max-width: 100%; }
 .role:focus-visible .role-meta { opacity: 1; transform: translateY(0); }
 
 .whereabouts {
-  margin-top: 12vh;
+  margin-top: clamp(20px, 7vh, 76px);
   font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -148,9 +149,15 @@ img { display: block; max-width: 100%; }
 .whereabouts a:hover { color: var(--accent); }
 
 /* The preview frame that reacts to whichever role is hovered */
+/* Height comes from the viewport, width follows from the ratio — so a taller
+   frame can never push the footer below the fold. */
 .stage {
   position: relative;
+  justify-self: end;
+  height: min(calc(100svh - 270px), 520px);
   aspect-ratio: 4 / 5;
+  width: auto;
+  max-width: 100%;
   border: 1px solid var(--line);
   background: var(--paper-2);
   overflow: hidden;
