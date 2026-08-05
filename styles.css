@@ -19,6 +19,7 @@
   --accent-2: #8a3214;
   --gold: #b0801c;
   --wash: rgba(255, 255, 255, 0.18);
+  --paper-veil: rgba(244, 234, 213, 0.85); /* --paper, translucent, for the sticky bar */
   --wrap: 1080px;
   --pad: 40px;
 }
@@ -195,10 +196,18 @@ img { display: block; max-width: 100%; }
    SUB-PAGE CHROME
    ============================================================ */
 
+/* Sticky. Translucent rather than solid so the fixed background wash and grain
+   carry through the bar instead of being covered by a flat strip. */
 .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--paper-veil);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   max-width: var(--wrap);
   margin: 0 auto;
-  padding: 28px var(--pad) 18px;
+  padding: 18px var(--pad) 14px;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
