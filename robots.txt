@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://haniqarrain.com/sitemap.xml
