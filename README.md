@@ -1,4 +1,4 @@
-# Hani AlKarrain — Portfolio
+# Hani Qarrain — Portfolio
 
 Personal portfolio site. Static HTML + CSS, no build step, no dependencies, no JavaScript.
 
